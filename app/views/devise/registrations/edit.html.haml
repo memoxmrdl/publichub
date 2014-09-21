@@ -1,0 +1,27 @@
+.container
+  .row
+    .col-md-6.col-md-offset-3
+      .panel.panel-default
+        .panel-heading
+          %h3.panel-title
+            = t('.edit_user')
+        .panel-body
+          = devise_error_messages!
+          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+            %fieldset
+              .form-group
+                = f.password_field :password, autocomplete: "off", placeholder: t('.password'), class: 'form-control'
+              .form-group
+                = f.password_field :password_confirmation, autocomplete: "off", placeholder: t('.password_confirmation'), class: 'form-control'
+              .form-group
+                = f.password_field :current_password, autocomplete: "off", placeholder: t('.current_password'), class: 'form-control'
+              = f.submit t('.update'), class: 'btn btn-lg btn-success btn-block'
+.container
+  .row
+    .col-md-6.col-md-offset-3
+      .panel.panel-danger
+        .panel-heading
+          %h3.panel-title
+            = t('.delete_account')
+        .panel-body
+          = button_to t('.confirm_cancel_account'), registration_path(resource_name), class: 'btn btn-lg btn-danger btn-block', data: { confirm: "Are you sure delete account?" }, method: :delete
