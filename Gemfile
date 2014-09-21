@@ -15,6 +15,7 @@ gem 'puma'
 gem 'foreman'
 gem 'devise'
 gem 'haml-rails'
+gem 'pretty_formatter'
 
 group :development do
   gem 'better_errors'
