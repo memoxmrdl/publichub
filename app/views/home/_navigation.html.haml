@@ -1,0 +1,18 @@
+.navbar.navbar-fixed-top.navbar-inverse{:role => "navigation"}
+  .container
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to t('app_name'), root_path, class: 'navbar-brand logo'
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li
+          %a{:href => "#home"} Test
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to 'Log in', new_user_session_path
+        %li
+          = link_to 'Sign Up', new_user_registration_path
