@@ -14,6 +14,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'puma'
 gem 'foreman'
 gem 'devise'
+gem 'haml-rails'
+
+group :development do
+  gem 'better_errors'
+end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
