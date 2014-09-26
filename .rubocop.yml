@@ -11,6 +11,8 @@ AllCops:
     - 'bin/**/*'
     - 'spec/**/*'
     - 'features/**/*'
+Documentation:
+  Enabled: false
 
 LineLength:
   Max: 99
