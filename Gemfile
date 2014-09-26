@@ -22,6 +22,7 @@ group :development do
   gem 'pry-rails'
   gem 'rails_best_practices'
   gem 'brakeman'
+  gem 'rubocop'
 end
 
 group :development, :test do
