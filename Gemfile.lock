@@ -74,6 +74,8 @@ GEM
     dotenv-deployment (0.0.2)
     erubis (2.7.0)
     execjs (2.2.1)
+    factory_girl (4.2.0)
+      activesupport (>= 3.0.0)
     fastercsv (1.5.5)
     foreman (0.75.0)
       dotenv (~> 0.11.1)
@@ -225,6 +227,7 @@ DEPENDENCIES
   brakeman
   coffee-rails (~> 4.0.0)
   devise
+  factory_girl
   foreman
   haml-rails
   jbuilder (~> 2.0)
