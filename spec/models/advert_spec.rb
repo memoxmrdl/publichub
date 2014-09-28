@@ -11,4 +11,14 @@ describe Advert do
 
     expect(advert).to be_valid
   end
+
+  it 'create a invalid advert' do
+    advert = Advert.create do |a|
+      a.description = 'Este es un mensaje de prueba'
+      a.schedule = '9:00pm - 10:00pm'
+      a.phone = '3131054480'
+    end
+
+    expect(advert).to be_invalid
+  end
 end
