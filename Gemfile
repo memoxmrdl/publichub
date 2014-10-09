@@ -16,6 +16,7 @@ gem 'foreman'
 gem 'devise'
 gem 'haml-rails'
 gem 'pretty_formatter'
+gem 'puffing-billy'
 
 group :development do
   gem 'better_errors'
@@ -23,10 +24,23 @@ group :development do
   gem 'rails_best_practices'
   gem 'brakeman'
   gem 'rubocop'
+  gem 'fabrication'
 end
 
 group :development, :test do
+  gem 'spring'
+  gem 'spring-commands-cucumber'
+  gem 'spring-commands-rspec'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl_rails', '~> 4.4.0'
   gem 'capybara', '~> 2.2.0'
+  gem 'capybara-screenshot'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+  gem 'email_spec'
+  gem 'fivemat', require: false
+  gem 'poltergeist'
+  gem 'selenium-webdriver'
+  gem 'vcr'
+  gem 'webmock'
 end
