@@ -27,7 +27,7 @@ group :development do
   gem 'fabrication'
 end
 
-group :development, :test do
+group :test do
   gem 'spring'
   gem 'spring-commands-cucumber'
   gem 'spring-commands-rspec'
