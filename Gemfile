@@ -28,6 +28,9 @@ group :development do
 end
 
 group :development, :test do
+  gem 'spring'
+  gem 'spring-commands-cucumber'
+  gem 'spring-commands-rspec'
   gem 'rspec-rails', '~> 3.0.0'
   gem 'factory_girl_rails', '~> 4.4.0'
   gem 'capybara', '~> 2.2.0'
