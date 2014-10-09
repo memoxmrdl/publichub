@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arel (5.0.1.20140414130214)
     ast (2.0.0)
     astrolabe (1.3.0)
@@ -57,6 +58,13 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-screenshot (1.0.3)
+      capybara (>= 1.0, < 3)
+      colored
+      launchy
+    childprocess (0.5.5)
+      ffi (~> 1.0, >= 1.0.11)
+    cliver (0.3.2)
     code_analyzer (0.4.5)
       sexp_processor
     coderay (1.1.0)
@@ -68,6 +76,22 @@ GEM
       execjs
     coffee-script-source (1.7.1)
     colored (1.2)
+    cookiejar (0.3.2)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
+    cucumber (1.3.17)
+      builder (>= 2.1.2)
+      diff-lcs (>= 1.1.3)
+      gherkin (~> 2.12)
+      multi_json (>= 1.7.5, < 2.0)
+      multi_test (>= 0.1.1)
+    cucumber-rails (1.4.1)
+      capybara (>= 1.1.2, < 3)
+      cucumber (>= 1.3.8, < 2)
+      mime-types (~> 1.16)
+      nokogiri (~> 1.5)
+      rails (>= 3, < 5)
+    database_cleaner (1.3.0)
     devise (3.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -78,17 +102,35 @@ GEM
     dotenv (0.11.1)
       dotenv-deployment (~> 0.0.2)
     dotenv-deployment (0.0.2)
+    em-http-request (1.1.2)
+      addressable (>= 2.3.4)
+      cookiejar
+      em-socksify (>= 0.3)
+      eventmachine (>= 1.0.3)
+      http_parser.rb (>= 0.6.0)
+    em-socksify (0.3.0)
+      eventmachine (>= 1.0.0.beta.4)
+    email_spec (1.6.0)
+      launchy (~> 2.1)
+      mail (~> 2.2)
     erubis (2.7.0)
+    eventmachine (1.0.3)
+    eventmachine_httpserver (0.2.1)
     execjs (2.2.1)
+    fabrication (2.11.3)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
     fastercsv (1.5.5)
+    ffi (1.9.5)
+    fivemat (1.3.1)
     foreman (0.75.0)
       dotenv (~> 0.11.1)
       thor (~> 0.19.1)
+    gherkin (2.12.2)
+      multi_json (~> 1.3)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -98,6 +140,7 @@ GEM
       railties (>= 4.0.1)
     highline (1.6.21)
     hike (1.2.3)
+    http_parser.rb (0.6.0)
     i18n (0.6.11)
     jbuilder (2.1.3)
       activesupport (>= 3.0.0, < 5)
@@ -106,6 +149,8 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
+    launchy (2.4.2)
+      addressable (~> 2.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -114,6 +159,7 @@ GEM
     mini_portile (0.6.0)
     minitest (5.4.0)
     multi_json (1.10.1)
+    multi_test (0.1.1)
     nokogiri (1.6.3.1)
       mini_portile (= 0.6.0)
     orm_adapter (0.5.0)
@@ -121,6 +167,11 @@ GEM
       ast (>= 1.1, < 3.0)
       slop (~> 3.4, >= 3.4.5)
     pg (0.17.1)
+    poltergeist (1.5.1)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      multi_json (~> 1.0)
+      websocket-driver (>= 0.2.0)
     polyglot (0.3.5)
     powerpack (0.0.9)
     pretty_formatter (0.0.2)
@@ -131,6 +182,13 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
+    puffing-billy (0.2.3)
+      capybara
+      em-http-request
+      eventmachine
+      eventmachine_httpserver
+      http_parser.rb
+      multi_json
     puma (2.9.0)
       rack (>= 1.1, < 2.0)
     rack (1.5.2)
@@ -192,12 +250,19 @@ GEM
       sexp_processor (~> 4.0)
     ruby_parser (3.5.0)
       sexp_processor (~> 4.1)
+    rubyzip (1.1.6)
+    safe_yaml (1.0.4)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
+    selenium-webdriver (2.43.0)
+      childprocess (~> 0.5)
+      multi_json (~> 1.0)
+      rubyzip (~> 1.0)
+      websocket (~> 1.0)
     sexp_processor (4.4.4)
     slim (2.0.3)
       temple (~> 0.6.6)
@@ -227,8 +292,14 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    vcr (2.9.3)
     warden (1.2.3)
       rack (>= 1.0)
+    webmock (1.19.0)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+    websocket (1.2.1)
+    websocket-driver (0.3.5)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -240,21 +311,32 @@ DEPENDENCIES
   bootstrap-sass
   brakeman
   capybara (~> 2.2.0)
+  capybara-screenshot
   coffee-rails (~> 4.0.0)
+  cucumber-rails
+  database_cleaner
   devise
+  email_spec
+  fabrication
   factory_girl_rails (~> 4.4.0)
+  fivemat
   foreman
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
   pg
+  poltergeist
   pretty_formatter
   pry-rails
+  puffing-billy
   puma
   rails (= 4.1.4)
   rails_best_practices
   rspec-rails (~> 3.0.0)
   rubocop
   sass-rails (~> 4.0.3)
+  selenium-webdriver
   turbolinks
   uglifier (>= 1.3.0)
+  vcr
+  webmock
